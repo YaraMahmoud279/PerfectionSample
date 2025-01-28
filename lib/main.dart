@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'Controller/ThemeController.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/get_instance.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:get/get_navigation/src/routes/transitions_type.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:perfection_sample/Controller/ThemeController.dart';
+import 'package:perfection_sample/Screens/pages/SecPage.dart';
+import 'package:perfection_sample/Screens/splash/Splash_screen..dart';
+
 import 'Screens/pages/HomeScreen.dart';
-import 'Screens/pages/SecPage.dart';
-import 'Screens/splash/Splash_screen..dart';
 
 void main() {
   runApp(const MyApp());

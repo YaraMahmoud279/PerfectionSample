@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../Controller/ThemeController.dart';
-import '../../Controller/UserControler.dart';
-import '../../Shared/AppColors.dart';
-import '../../model/UserModel.dart';
+import 'package:perfection_sample/Controller/ThemeController.dart';
+import 'package:perfection_sample/Controller/UserControler.dart';
+import 'package:perfection_sample/Shared/AppColors.dart';
+import 'package:perfection_sample/model/UserModel.dart';
+
 
 class HomeScreen extends StatelessWidget {
   final UserController userController = Get.put(UserController());

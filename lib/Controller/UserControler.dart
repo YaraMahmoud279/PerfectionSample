@@ -1,7 +1,10 @@
-import 'package:get/get.dart';
-import 'package:http/http.dart' as http;
+
+
 import 'dart:convert';
-import '../model/UserModel.dart';
+
+import 'package:get/state_manager.dart';
+import 'package:perfection_sample/model/UserModel.dart';
+import 'package:http/http.dart' as http;
 
 class UserController extends GetxController {
   var users = <UserModel>[].obs;
