@@ -10,11 +10,13 @@ class HomeScreen extends StatelessWidget {
   final UserController userController = Get.put(UserController());
   final ThemeController themeController = Get.find();
 
+   HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(120),
+        preferredSize: const Size.fromHeight(120),
         child: Obx(() => AppBar(
               backgroundColor: themeController.isDarkMode.value
                   ? AppColors.darkBackground
@@ -29,8 +31,8 @@ class HomeScreen extends StatelessWidget {
                       inactiveThumbColor: AppColors.lightText,
                     )),
               ],
-              flexibleSpace: Padding(
-                padding: const EdgeInsets.all(20.0),
+              flexibleSpace: const Padding(
+                padding: EdgeInsets.all(20.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,7 +61,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Obx(() {
         if (userController.isLoading.value && userController.users.isEmpty) {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         }
 
         bool hasMoreUsers = userController.hasMoreUsers.value;
@@ -81,13 +83,13 @@ class HomeScreen extends StatelessWidget {
                         backgroundColor: themeController.isDarkMode.value
                             ? AppColors.darkBackground
                             : AppColors.primary,
-                        padding: EdgeInsets.symmetric(vertical: 14),
+                        padding: const EdgeInsets.symmetric(vertical: 14),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
                       ),
                       child: userController.isLoading.value
-                          ? Row(
+                          ? const Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 CircularProgressIndicator(
@@ -105,7 +107,7 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ],
                             )
-                          : Text(
+                          : const Text(
                               'Load More',
                               style: TextStyle(
                                 fontSize: 16,
@@ -134,7 +136,7 @@ class HomeScreen extends StatelessWidget {
                     margin: const EdgeInsets.symmetric(vertical: 8),
                     child: ListTile(
                       contentPadding:
-                          EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                          const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
                       leading: CircleAvatar(
                         backgroundImage: NetworkImage(user.avatar),
                         radius: 30,

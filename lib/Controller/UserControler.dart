@@ -1,7 +1,4 @@
-
-
-import 'dart:convert';
-
+import 'dart:convert' show json;
 import 'package:get/state_manager.dart';
 import 'package:perfection_sample/model/UserModel.dart';
 import 'package:http/http.dart' as http;

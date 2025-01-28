@@ -7,6 +7,8 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -32,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
 
     _controller =
-        AnimationController(vsync: this, duration: Duration(seconds: 2));
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
 
     _scaleAnimation =
         CurvedAnimation(parent: _controller, curve: Curves.easeIn);
@@ -45,13 +47,13 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller.forward();
 
-    Future.delayed(Duration(milliseconds: 500), () {
+    Future.delayed(const Duration(milliseconds: 500), () {
       setState(() {
         particles = generateParticles();
       });
     });
 
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 3), () {
       Get.offNamed('/home');
     });
   }
@@ -78,7 +80,7 @@ class _SplashScreenState extends State<SplashScreen>
                       ),
                     ),
                   ))
-              .toList(),
+              ,
           Center(
             child: FadeTransition(
               opacity: _fadeAnimation,

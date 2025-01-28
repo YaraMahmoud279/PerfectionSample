@@ -8,7 +8,6 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:perfection_sample/Controller/ThemeController.dart';
 import 'package:perfection_sample/Screens/pages/SecPage.dart';
 import 'package:perfection_sample/Screens/splash/Splash_screen..dart';
-
 import 'Screens/pages/HomeScreen.dart';
 
 void main() {
@@ -30,7 +29,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           initialRoute: '/splash',
           getPages: [
-            GetPage(name: '/splash', page: () => SplashScreen()),
+            GetPage(name: '/splash', page: () => const SplashScreen()),
             GetPage(name: '/home', page: () => HomeScreen()),
             GetPage(
               name: '/detail',
