@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../Controller/ThemeController.dart';
 import '../../Controller/UserControler.dart';
-import '../../Shared/AppColors.dart';
+import '../splash/AppColors.dart';
 import '../../model/UserModel.dart';
 
 class HomeScreen extends StatelessWidget {
