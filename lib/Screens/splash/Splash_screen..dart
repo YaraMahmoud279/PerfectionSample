@@ -7,7 +7,8 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
   late Animation<double> _fadeAnimation;
@@ -26,12 +27,17 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   void initState() {
     super.initState();
 
-    _controller = AnimationController(vsync: this, duration: Duration(seconds: 2));
+    _controller =
+        AnimationController(vsync: this, duration: Duration(seconds: 2));
 
-    _scaleAnimation = CurvedAnimation(parent: _controller, curve: Curves.easeIn);
-    _fadeAnimation = Tween<double>(begin: 0, end: 1).animate(CurvedAnimation(parent: _controller, curve: Curves.easeIn));
-    _rotateAnimation = Tween<double>(begin: 0, end: 1).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
-    _particleAnimation = Tween<double>(begin: 0, end: 1).animate(CurvedAnimation(parent: _controller, curve: Curves.elasticOut));
+    _scaleAnimation =
+        CurvedAnimation(parent: _controller, curve: Curves.easeIn);
+    _fadeAnimation = Tween<double>(begin: 0, end: 1)
+        .animate(CurvedAnimation(parent: _controller, curve: Curves.easeIn));
+    _rotateAnimation = Tween<double>(begin: 0, end: 1)
+        .animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
+    _particleAnimation = Tween<double>(begin: 0, end: 1).animate(
+        CurvedAnimation(parent: _controller, curve: Curves.elasticOut));
 
     _controller.forward();
 
@@ -52,23 +58,23 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
       backgroundColor: Colors.deepPurple,
       body: Stack(
         children: [
-          // Particles
-          ...particles.map((particle) => Positioned(
-            left: particle.x,
-            top: particle.y,
-            child: Opacity(
-              opacity: _particleAnimation.value.clamp(0.0, 1.0),
-              child: Container(
-                width: particle.size,
-                height: particle.size,
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.6),
-                  shape: BoxShape.circle,
-                ),
-              ),
-            ),
-          )).toList(),
-
+          ...particles
+              .map((particle) => Positioned(
+                    left: particle.x,
+                    top: particle.y,
+                    child: Opacity(
+                      opacity: _particleAnimation.value.clamp(0.0, 1.0),
+                      child: Container(
+                        width: particle.size,
+                        height: particle.size,
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.6),
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                    ),
+                  ))
+              .toList(),
           Center(
             child: FadeTransition(
               opacity: _fadeAnimation,

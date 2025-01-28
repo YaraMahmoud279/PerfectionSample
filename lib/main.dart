@@ -5,7 +5,6 @@ import 'Screens/pages/HomeScreen.dart';
 import 'Screens/pages/SecPage.dart';
 import 'Screens/splash/Splash_screen..dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -18,22 +17,21 @@ class MyApp extends StatelessWidget {
     final ThemeController themeController = Get.put(ThemeController());
 
     return Obx(() => GetMaterialApp(
-      title: 'Perfection',
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
-      themeMode: themeController.theme,
-      debugShowCheckedModeBanner: false,
-      initialRoute: '/splash',
-      getPages: [
-        GetPage(name: '/splash', page: () => SplashScreen()),
-        GetPage(name: '/home', page: () => HomeScreen()),
-        GetPage(
-          name: '/detail',
-          page: () => DetailScreen(),
-          transition: Transition.fadeIn,
-        ),
-      ],
-    ));
+          title: 'Perfection',
+          theme: ThemeData.light(),
+          darkTheme: ThemeData.dark(),
+          themeMode: themeController.theme,
+          debugShowCheckedModeBanner: false,
+          initialRoute: '/splash',
+          getPages: [
+            GetPage(name: '/splash', page: () => SplashScreen()),
+            GetPage(name: '/home', page: () => HomeScreen()),
+            GetPage(
+              name: '/detail',
+              page: () => DetailScreen(),
+              transition: Transition.fadeIn,
+            ),
+          ],
+        ));
   }
 }
-
