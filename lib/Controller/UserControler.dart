@@ -19,11 +19,13 @@ class UserController extends GetxController {
     if (isLoading.value || !hasMoreUsers.value) return;
 
     isLoading.value = true;
-    final response = await http.get(Uri.parse('https://reqres.in/api/users?page=$currentPage'));
+    final response = await http
+        .get(Uri.parse('https://reqres.in/api/users?page=$currentPage'));
 
     if (response.statusCode == 200) {
       var data = json.decode(response.body)['data'];
-      var userList = (data as List).map((json) => UserModel.fromJson(json)).toList();
+      var userList =
+          (data as List).map((json) => UserModel.fromJson(json)).toList();
       users.addAll(userList);
 
       if (userList.length < 6) {
@@ -37,7 +39,8 @@ class UserController extends GetxController {
   }
 
   Future<UserModel> fetchUserDetails(int id) async {
-    final response = await http.get(Uri.parse('https://reqres.in/api/users/$id'));
+    final response =
+        await http.get(Uri.parse('https://reqres.in/api/users/$id'));
     if (response.statusCode == 200) {
       var data = json.decode(response.body)['data'];
       return UserModel.fromJson(data);
